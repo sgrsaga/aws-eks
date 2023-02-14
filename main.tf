@@ -26,11 +26,26 @@ provider "aws" {
 ############# Modules ############
 
 # Create Network
+module "eks_vpc" {
+  source = "./modules/network"
+  vpc_name = var.vpc_name
+  vpc_cidr = var.vpc_cidr
+  public_source_cidr = var.public_source_cidr
+  public_source_cidr_v6 = var.public_source_cidr_v6
+  ig_name = var.ig_name
+
+  public_subnets = var.public_subnets
+  private_subnets = var.private_subnets
+  public_access_sg_ingress_rules = var.public_access_sg_ingress_rules
+  public_rt = var.public_rt
+  private_rt = var.private_rt
+  
+}
 
 # EKS Roles
 module "aws_eks_roles" {
-    source = "modules/eks-roles"
-  
+    source = "./modules/eks-roles"
+    eks_cluster_role_name = var.eks_cluster_role_name
 }
 
 /*

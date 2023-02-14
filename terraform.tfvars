@@ -41,3 +41,6 @@ public_access_sg_ingress_rules = [
       to_port = 0
     }
   ]
+
+### EKS Cluster roles
+eks_cluster_role_name = "eksClusterRole"

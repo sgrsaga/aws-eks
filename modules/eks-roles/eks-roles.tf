@@ -1,7 +1,7 @@
 
 ## EKS Cluster Role
 resource "aws_iam_role" "eksClusterRole" {
-  name = var.eks-cluster-role-name
+  name = var.eks_cluster_role_name
 
   assume_role_policy = <<EOF
 {

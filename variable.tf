@@ -84,3 +84,9 @@ variable "public_access_sg_ingress_rules" {
     }
   ]
 }
+
+## EKS Roles
+variable "eks_cluster_role_name" {
+  type = string
+  default = "eksClusterRole"
+}
