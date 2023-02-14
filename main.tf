@@ -11,7 +11,7 @@ terraform {
 ## Setting the AWS S3 as the Terraform backend
 terraform {
   backend "s3" {
-    bucket = "terraform_state_file_20221104_TerraCode"
+    bucket = "sgrsaga-aws-eks-20230214"
     key    = "terraform.tfstate"
     region = "ap-south-1"
   }
